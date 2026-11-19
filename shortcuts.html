@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=settings.html#shortcutsSection">
+  <title>Universal Video Controller - Keyboard Shortcuts</title>
+  <link rel="stylesheet" href="shortcuts.css">
+  <script src="theme-init.js"></script>
+</head>
+<body>
+  
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-text">
+          <h1>Keyboard Shortcuts</h1>
+          <p>Universal Video Controller hotkeys for lightning-fast playback</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="settings.html" class="btn btn-secondary">
+          Settings & Themes
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="shortcuts-card">
+      <div class="card-intro">
+        <h2>Active Key Mappings</h2>
+        <p>Shortcuts automatically work on all video players without interfering with typing into text boxes or search bars.</p>
+      </div>
+
+      
+      <div class="layout-selector-bar">
+        <div class="layout-info">
+          <label for="keyboardLayoutSelect" class="layout-label">Keyboard Layout:</label>
+          <select id="keyboardLayoutSelect" class="layout-select">
+            <option value="qwerty">QWERTY (Standard / WASD)</option>
+            <option value="azerty">AZERTY (French / ZQSD)</option>
+            <option value="qwertz">QWERTZ (German / Central Europe)</option>
+
+          </select>
+        </div>
+        <button id="autoDetectBtn" class="btn btn-secondary btn-sm" title="Detect keyboard layout using browser API">
+          Auto-Detect Layout
+        </button>
+      </div>
+
+      
+      <div class="shortcuts-grid" id="shortcutsGrid">
+        
+      </div>
+
+      
+      <div class="actions-bar">
+        <div class="left-actions">
+          <button id="resetDefaultsBtn" class="btn btn-secondary">Reset to Defaults</button>
+          <button id="clearAllBtn" class="btn btn-danger">Clear All Shortcuts</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  
+  <div class="recording-modal" id="recordingModal">
+    <div class="modal-card">
+      <div class="pulse-ring"></div>
+      <h3 id="modalTitle">Press any key</h3>
+      <p id="modalDesc">Press any key on your keyboard to assign, Backspace or Delete to Clear, or Esc to cancel.</p>
+      <div class="key-preview" id="keyPreview">Listening...</div>
+      <div class="key-preview-hint" id="keyPreviewHint"></div>
+      <div class="modal-actions">
+        <button id="clearModalKeyBtn" class="btn btn-secondary btn-sm modal-none-btn" type="button">Clear</button>
+        <button id="cancelModalBtn" class="btn btn-secondary btn-sm" type="button">Cancel (Esc)</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="toast" id="toast">Shortcuts updated!</div>
+
+  <script src="shortcuts.js"></script>
+</body>
+</html>

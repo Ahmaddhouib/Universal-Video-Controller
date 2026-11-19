@@ -1,0 +1,2130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Video Controller - Settings & Themes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="shortcuts.css" />
+    <link rel="stylesheet" href="settings.css" />
+    <script src="theme-init.js"></script>
+  </head>
+  <body>
+    
+    <header class="app-header">
+      <div class="header-container">
+        <div class="header-actions">
+          <button id="resetDefaultsBtn" class="btn btn-danger">
+            Reset to Default Settings
+          </button>
+        </div>
+        <div class="brand">
+          <div class="brand-text">
+            <h1>Universal Video Controller</h1>
+            <p>Make surfing the web a breeze</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <a
+            href="https://github.com/Ahmaddhouib/Universal-Video-Controller"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="header-source-btn"
+            id="headerSourceBtn"
+            title="View source code on GitHub"
+          >
+            <svg
+              class="header-github-icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            <span>Source Available</span>
+          </a>
+          <div class="header-issues-wrap" id="headerIssuesWrap">
+            <button
+              type="button"
+              class="header-issues-btn"
+              id="headerIssuesBtn"
+              title="Having issues? Click to report a bug"
+              aria-expanded="false"
+            >
+              <span>Having issues?</span>
+              <svg
+                class="issues-click-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M14 4.1 12 6" />
+                <path d="m5.1 8-2.9-.8" />
+                <path d="m6 12-1.9 2" />
+                <path d="M7.2 2.2 8 5.1" />
+                <path
+                  d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"
+                />
+              </svg>
+            </button>
+            <div
+              class="header-issues-dropdown"
+              id="headerIssuesDropdown"
+              role="dialog"
+              aria-label="Report a bug"
+            >
+              <div class="issues-dropdown-header">
+                <span class="issues-dropdown-title">Send me an email on:</span>
+                <button
+                  type="button"
+                  class="issues-close-btn"
+                  id="closeIssuesBtn"
+                  title="Close"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+              </div>
+              <div class="issues-dropdown-body">
+                <a
+                  href="mailto:UniversalVideoController@gmail.com?subject=Universal%20Video%20Controller%20-%20Bug%20Report"
+                  class="issues-email-link"
+                  id="issuesEmailLink"
+                  title="Click to copy and open mail app"
+                  >UniversalVideoController@gmail.com</a
+                >
+                <button
+                  type="button"
+                  class="issues-copy-btn"
+                  id="copyIssuesEmailBtn"
+                  title="Copy email to clipboard"
+                >
+                  <svg
+                    class="copy-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
+                  </svg>
+                  <span id="copyIssuesBtnText">Copy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            id="openTipModalBtn"
+            class="header-coffee-link"
+            title="Support development - Leave a tip"
+          >
+            <img src="icons/176696.png" class="tip-icon-img" alt="Tip" />
+            <span>Leave a Tip</span>
+          </button>
+          <button
+            type="button"
+            id="headerThemeToggleBtn"
+            class="header-theme-toggle-btn"
+            title="Toggle Light / Dark Theme"
+            aria-label="Toggle Theme"
+          >
+            <svg class="theme-icon sun-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"
+                fill="currentColor"
+              />
+            </svg>
+            <svg class="theme-icon moon-icon" viewBox="0 0 24 24">
+              <path
+                d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-layout">
+      
+      <section class="panel config-panel">
+        
+        <div
+          class="top-rate-banner"
+          title="Rate us 5 stars on the Chrome Web Store"
+        >
+          <a
+            href="https://chromewebstore.google.com/detail/universal-video-controlle/dmepibiilnbbpgchbjdfegbibklhmgdi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="top-rate-stars"
+            title="Rate us 5 stars on the Chrome Web Store"
+          >
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </a>
+          <div class="top-rate-info">
+            <a
+              href="https://chromewebstore.google.com/detail/universal-video-controlle/dmepibiilnbbpgchbjdfegbibklhmgdi"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="top-rate-title"
+              >Enjoying Universal Video Controller?</a
+            >
+            <span class="top-rate-sub">
+              <a
+                href="https://chromewebstore.google.com/detail/universal-video-controlle/dmepibiilnbbpgchbjdfegbibklhmgdi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="top-rate-store-link"
+                >Please leave a 5-star review!</a
+              >
+              <span class="top-rate-patreon-wrap">
+                <span class="top-rate-bullet">•</span>
+                <a
+                  href="https://www.patreon.com/cw/UniversalVideoControllerExtension/membership"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="top-rate-patreon-link"
+                  >Become a Patreon</a
+                >
+              </span>
+            </span>
+          </div>
+          <a
+            href="https://chromewebstore.google.com/detail/universal-video-controlle/dmepibiilnbbpgchbjdfegbibklhmgdi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="top-rate-cta"
+            title="Rate us 5 stars on the Chrome Web Store"
+          >
+            <span>Rate 5 Stars</span>
+            <svg
+              class="top-rate-arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        
+        <div class="settings-reload-tip" id="settingsReloadTip">
+          <div class="reload-tip-content">
+            <span class="reload-tip-text"
+              >Certain settings or custom website rules may not apply to an
+              already open browser tab until that tab is
+              <strong>reloaded</strong>.</span
+            >
+          </div>
+          <button
+            type="button"
+            class="tip-close-btn"
+            id="dismissSettingsReloadTipBtn"
+            title="Dismiss notice"
+            aria-label="Dismiss notice"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="config-card">
+          <h2 class="card-title">Theme Presets</h2>
+          <div class="theme-grid">
+            <button class="theme-card active" data-theme="cyberNeon">
+              <div class="theme-preview cyber-neon">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+              <span class="theme-name">Cyber Neon</span>
+            </button>
+
+            <button class="theme-card" data-theme="deepAmethyst">
+              <div class="theme-preview deep-amethyst">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+              <span class="theme-name">Deep Amethyst</span>
+            </button>
+
+            <button class="theme-card" data-theme="emeraldWave">
+              <div class="theme-preview emerald-wave">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+              <span class="theme-name">Emerald Wave</span>
+            </button>
+
+            <button class="theme-card" data-theme="goldenSunset">
+              <div class="theme-preview golden-sunset">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+              <span class="theme-name">Golden Sunset</span>
+            </button>
+
+            <button class="theme-card" data-theme="monochrome">
+              <div class="theme-preview monochrome">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+              <span class="theme-name">Dark Titanium</span>
+            </button>
+
+            <button class="theme-card" data-theme="custom">
+              <div class="theme-preview custom-theme">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+              <span class="theme-name">Custom Colors</span>
+            </button>
+          </div>
+
+          <div class="custom-colors-wrap" id="customColorsWrap">
+            <div class="color-item">
+              <label for="buttonBgColor">Controls Background</label>
+              <input type="color" id="buttonBgColor" value="#181926" />
+            </div>
+            <div class="color-item">
+              <label for="activeColor">Controller & HUD</label>
+              <input type="color" id="activeColor" value="#38bdf8" />
+            </div>
+            <div class="color-item">
+              <label for="buttonsColor">Controls (Default)</label>
+              <input type="color" id="buttonsColor" value="#cbd5e1" />
+            </div>
+            <div class="color-item">
+              <label for="activeStateColor">Active State Indicator</label>
+              <input type="color" id="activeStateColor" value="#a855f7" />
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="config-card">
+          <h2 class="card-title">Multipliers</h2>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Speed Jump Step</span>
+              <span class="setting-desc"
+                >Speed change per scroll tick or hotkey</span
+              >
+            </div>
+            <select id="speedJump" class="input-select">
+              <option value="0.1">0.10x</option>
+              <option value="0.25" selected>0.25x</option>
+              <option value="0.5">0.50x</option>
+              <option value="1.0">1.00x</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Volume Jump Step</span>
+              <span class="setting-desc"
+                >Volume change per scroll tick or hotkey</span
+              >
+            </div>
+            <select id="volumeJump" class="input-select">
+              <option value="0.05">5%</option>
+              <option value="0.1" selected>10%</option>
+              <option value="0.15">15%</option>
+              <option value="0.2">20%</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Favorite Speed</span>
+              <span class="setting-desc"
+                >Speed target triggered by
+                <kbd class="tip-kbd" id="favoriteSpeedKeyDesc">Q</kbd
+                ><span id="favoriteSpeedHoldDesc">
+                  (or hold to boost)</span
+                ></span
+              >
+            </div>
+            <input
+              type="number"
+              id="favoriteSpeed"
+              class="input-number"
+              min="1.0"
+              max="10.0"
+              step="0.25"
+              value="1.5"
+            />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Super Speed</span>
+              <span class="setting-desc"
+                >Turbo speed target triggered by
+                <kbd class="tip-kbd" id="superSpeedKeyDesc">E</kbd
+                ><span id="superSpeedHoldDesc"> (or hold to boost)</span></span
+              >
+            </div>
+            <input
+              type="number"
+              id="superSpeed"
+              class="input-number"
+              min="1.5"
+              max="16.0"
+              step="0.25"
+              value="2.5"
+            />
+          </div>
+
+          <div class="setting-row" id="holdSpaceSpeedRow">
+            <div class="setting-info">
+              <span class="setting-label">Hold Space Speed</span>
+              <span class="setting-desc"
+                >Custom speed multiplier while holding
+                <kbd class="tip-kbd" id="spaceSpeedKeyDescVal">Space</kbd></span
+              >
+            </div>
+            <input
+              type="number"
+              id="holdSpaceSpeed"
+              class="input-number"
+              min="1.0"
+              max="16.0"
+              step="0.25"
+              value="2.0"
+            />
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Short Skip Duration</span>
+              <span class="setting-desc"
+                >Short skip seek duration (<kbd
+                  class="tip-kbd"
+                  id="shortSkipFwdKeyDesc"
+                  >C</kbd
+                >
+                / <kbd class="tip-kbd" id="shortSkipBwdKeyDesc">X</kbd>)</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="shortSkipDuration"
+                class="input-number"
+                min="1"
+                max="60"
+                value="5"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Long Skip Duration</span>
+              <span class="setting-desc"
+                >Long skip seek duration (<kbd
+                  class="tip-kbd"
+                  id="longSkipFwdKeyDesc"
+                  >V</kbd
+                >
+                / <kbd class="tip-kbd" id="longSkipBwdKeyDesc">Z</kbd>)</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="longSkipDuration"
+                class="input-number"
+                min="5"
+                max="300"
+                value="10"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="config-card">
+          <h2 class="card-title">Behavior & Options</h2>
+
+          
+          <h3 class="setting-subsection-title">Control</h3>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Speed Boost</span>
+              <span class="setting-desc"
+                >Hold <kbd class="tip-kbd" id="spaceSpeedKeyDesc">Space</kbd> to
+                boost speed</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="holdSpaceSpeedEnabled" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Default Video State</span>
+              <span class="setting-desc"
+                >Action when a video is detected</span
+              >
+            </div>
+            <select id="defaultVideoState" class="input-select">
+              <option value="doNothing" selected>Default</option>
+              <option value="pause">Pause</option>
+              <option value="play">Play</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Scroll Wheel Video Control</span>
+              <span class="setting-desc"
+                >Action when scrolling the mouse wheel anywhere over the video</span
+              >
+            </div>
+            <select id="scrollWheelAction" class="input-select">
+              <option value="doNothing" selected>Default</option>
+              <option value="volume">Adjust Volume</option>
+              <option value="speed">Adjust Speed</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Hold Click Action</span>
+              <span class="setting-desc"
+                >Action when clicking and holding over the video: boost speed,
+                favorite speed, super speed, or default</span
+              >
+            </div>
+            <select id="holdClickAction" class="input-select">
+              <option value="default">Default</option>
+              <option value="boost" selected>Boost Speed</option>
+              <option value="favorite">Favorite Speed</option>
+              <option value="super">Super Speed</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Hold to Boost Favorite Speed</span>
+              <span class="setting-desc"
+                >Hold
+                <kbd class="tip-kbd" id="favoriteSpeedHoldKeyDesc">Q</kbd> to
+                boost speed</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="holdFavoriteSpeedEnabled" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Hold to Boost Super Speed</span>
+              <span class="setting-desc"
+                >Hold <kbd class="tip-kbd" id="superSpeedHoldKeyDesc">E</kbd> to
+                boost speed</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="holdSuperSpeedEnabled" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">0-9 Segment Control</span>
+              <span class="setting-desc"
+                >Number keys (0-9) to jump through video segment</span
+              >
+            </div>
+            <select id="segmentControl1To9" class="input-select">
+              <option value="doNothing">Default</option>
+              <option value="force" selected>Force</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Background Playback</span>
+              <span class="setting-desc"
+                >Prevent video auto-pausing when switching tabs, minimizing the
+                browser, or clicking outside (e.g. Instagram)</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="backgroundPlay" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label"
+                >Deactivation Hotkey <kbd
+                  class="tip-kbd"
+                  id="deactivateKeyDesc"
+                  >T</kbd
+                > Action</span
+              >
+              <span class="setting-desc"
+                >Hotkey action when pressed</span
+              >
+            </div>
+            <select id="deactivateHotkeyMode" class="input-select">
+              <option value="toggle">Activate / Deactivate</option>
+              <option value="deactivateOnly" selected>Deactivate Only</option>
+            </select>
+          </div>
+
+          <div class="setting-row" id="autoReactivateRow">
+            <div class="setting-info">
+              <span class="setting-label"
+                >Auto-Reactivate <kbd
+                  class="tip-kbd"
+                  id="autoReactivateKeyDesc"
+                  >T</kbd
+                > Delay</span
+              >
+              <span class="setting-desc"
+                >Duration before automatically reactivating (0 = Off). During
+                this countdown, <kbd
+                  class="tip-kbd"
+                  id="autoReactivateKeyDesc2"
+                  >T</kbd
+                > passes to the website without triggering reactivation</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="autoReactivateDelay"
+                class="input-number"
+                min="0"
+                max="60"
+                step="0.5"
+                value="0"
+                placeholder="Off"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          <div class="setting-row" id="holdToReactivateRow">
+            <div class="setting-info">
+              <span class="setting-label"
+                >Hold <kbd class="tip-kbd" id="holdReactivateKeyDesc">T</kbd>
+                to Reactivate</span
+              >
+              <span class="setting-desc"
+                >Duration to hold <kbd
+                  class="tip-kbd"
+                  id="holdReactivateKeyDesc2"
+                  >T</kbd
+                > before reactivating (0 = Off). Prevents
+                accidental reactivation when using the key natively on
+                websites</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="holdToReactivateDelay"
+                class="input-number"
+                min="0"
+                max="60"
+                step="0.5"
+                value="0"
+                placeholder="Off"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          
+          <h3 class="setting-subsection-title">Speed</h3>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Default Video Speed</span>
+              <span class="setting-desc"
+                >Initial playback speed when a video starts (0.10x -
+                16.00x)</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="defaultSpeed"
+                class="input-number"
+                min="0.1"
+                max="16"
+                step="0.05"
+                value="1.00"
+                placeholder="1.00"
+              />
+              <span>x</span>
+            </div>
+          </div>
+
+          
+          <h3 class="setting-subsection-title">Volume</h3>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Default Volume</span>
+              <span class="setting-desc"
+                >Initial playback volume for detected videos</span
+              >
+            </div>
+            <div class="default-volume-controls">
+              <div class="input-unit">
+                <input
+                  type="number"
+                  id="defaultVolume"
+                  class="input-number"
+                  min="0"
+                  max="600"
+                  step="5"
+                  value="100"
+                />
+                <span>%</span>
+              </div>
+              <label
+                class="default-mute-toggle"
+                title="Start videos muted by default"
+              >
+                <input type="checkbox" id="defaultMuted" />
+                <span class="default-mute-box">
+                  <svg
+                    class="default-mute-icon"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                  >
+                    <path
+                      d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span class="default-mute-text" id="defaultMuteText"
+                    >Mute</span
+                  >
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Volume Boost (Up to 600%)</span>
+              <span class="setting-desc"
+                >Amplify audio up to 600% using Web Audio gain</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="volumeBoostEnabled" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          
+          <h3 class="setting-subsection-title">Loop</h3>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Default Loop State</span>
+              <span class="setting-desc"
+                >Action when a video is detected
+                </span
+              >
+            </div>
+            <select id="defaultLoopState" class="input-select">
+              <option value="doNothing" selected>Default</option>
+              <option value="loop">Loop</option>
+              <option value="unloop">Don't Loop</option>
+            </select>
+          </div>
+
+          
+          <h3 class="setting-subsection-title">Display</h3>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Auto-Hide Cursor on Video</span>
+              <span class="setting-desc"
+                >Hide mouse cursor after inactivity while hovering over a
+                video</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="hideCursorOnInactivity" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row" id="hideCursorTimeoutRow">
+            <div class="setting-info">
+              <span class="setting-label">Cursor Inactivity Delay</span>
+              <span class="setting-desc">Duration before hiding the cursor</span>
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="hideCursorTimeout"
+                class="input-number"
+                min="0.5"
+                max="30"
+                step="0.5"
+                value="2.5"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Show Hotkey HUD Notifications</span>
+              <span class="setting-desc"
+                >Display on-screen popup notifications (e.g. Volume, Speed,
+                Paused) when using hotkeys</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="showHotkeyHUD" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row" id="persistentSpeedBoostHUDRow">
+            <div class="setting-info">
+              <span class="setting-label">Keep HUD Visible While Holding Speed Buttons</span>
+              <span class="setting-desc"
+                >Keep the on-screen speed HUD Notification visible for the entire
+                duration of a speed button hold</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="persistentSpeedBoostHUD" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Start Hidden</span>
+              <span class="setting-desc"
+                >Controller button and Video Controls hidden until hotkey <kbd
+                  class="tip-kbd"
+                  id="startHiddenKeyDesc"
+                  >H</kbd
+                > is pressed</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="defaultHidden" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row" id="hideControlsDurationRow">
+            <div class="setting-info">
+              <span class="setting-label">Auto-Restore Controller Delay</span>
+              <span class="setting-desc"
+                >Duration for the controller to remain hidden after pressing <kbd class="tip-kbd" id="autoRestoreHideKeyDesc">H</kbd> or clicking Hide before automatically reappearing (0 = stay hidden until manually restored).</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="hideControlsDuration"
+                class="input-number"
+                min="0"
+                max="60"
+                step="0.5"
+                value="0"
+                placeholder="0"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Controller Position</span>
+              <span class="setting-desc"
+                >Place the controller button and sub-controls in the top-left or
+                top-right corner of the video</span
+              >
+            </div>
+            <select id="controllerPosition" class="input-select">
+              <option value="topLeft" selected>Top-Left</option>
+              <option value="topRight">Top-Right</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Controls Trigger</span>
+              <span class="setting-desc"
+                >Choose whether sub-controls appear when hovering or clicking
+                the controller button</span
+              >
+            </div>
+            <select id="controlsTrigger" class="input-select">
+              <option value="hover" selected>Appear on Hover</option>
+              <option value="click">Appear on Click</option>
+            </select>
+          </div>
+
+          <div class="setting-row" id="controlsFadeInDelayRow">
+            <div class="setting-info">
+              <span class="setting-label">Controls Fade-In Delay</span>
+              <span class="setting-desc"
+                >Duration before sub-controls fade in when hovering over the
+                controller button</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="controlsFadeInDelay"
+                class="input-number"
+                min="0"
+                max="2"
+                step="0.05"
+                value="0.2"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          <div class="setting-row setting-row-column" id="videoControlsRow">
+            <div class="setting-info">
+              <span class="setting-label">Video Controls</span>
+              <span class="setting-desc"
+                >Drag and drop or use arrows to reorder sub-controls beneath the
+                controller button. Toggle switches to enable or remove
+                controls.</span
+              >
+            </div>
+            <div id="videoControlsList" class="video-controls-list">
+              
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Opacity</span>
+              <span class="setting-desc"
+                >Transparency of the controller button, Video Controls,
+                overlays, and on-screen popups</span
+              >
+            </div>
+            <div class="range-wrap">
+              <input
+                type="range"
+                id="opacity"
+                min="0.3"
+                max="1.0"
+                step="0.05"
+                value="0.90"
+              />
+              <span id="opacityVal">90%</span>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Size</span>
+              <span class="setting-desc"
+                >Scale of the controller button, Video Controls, and
+                overlays</span
+              >
+            </div>
+            <div class="range-wrap">
+              <input
+                type="range"
+                id="overlaySize"
+                min="0.6"
+                max="1.5"
+                step="0.05"
+                value="1.0"
+              />
+              <span id="overlaySizeVal">100%</span>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label"
+                >Controller &amp; Controls &amp; Hotkey HUD Notifications
+                Glow</span
+              >
+              <span class="setting-desc"
+                >Enable glowing accents and pulsing light effects on the
+                floating controller, controls, and hotkey HUD
+                notifications</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="glowEnabled" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Interface Appearance</span>
+              <span class="setting-desc"
+                >Auto-detect system theme, or force Dark or Light theme</span
+              >
+            </div>
+            <select id="uiTheme" class="input-select">
+              <option value="auto" selected>Auto (System Theme)</option>
+              <option value="dark">Dark Theme</option>
+              <option value="light">Light Theme</option>
+            </select>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Auto-Minimize Video Controls</span>
+              <span class="setting-desc"
+                >Automatically collapses open Speed, Volume, and Loop overlays
+                after inactivity</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="autoMinimize" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row" id="autoMinimizeRow">
+            <div class="setting-info">
+              <span class="setting-label">Auto-Minimize Delay</span>
+              <span class="setting-desc"
+                >Duration before collapsing open overlays</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="autoMinimizeTimeout"
+                class="input-number"
+                min="0.5"
+                max="30"
+                step="0.5"
+                value="2.5"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div class="setting-info">
+              <span class="setting-label">Auto-Hide Controls</span>
+              <span class="setting-desc"
+                >Hide the video controls after mouse inactivity over the
+                video</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="autoHideButtons" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="setting-row" id="autoHideButtonsRow">
+            <div class="setting-info">
+              <span class="setting-label">Auto-Hide Delay</span>
+              <span class="setting-desc"
+                >Duration before hiding controls/progress bar</span
+              >
+            </div>
+            <div class="input-unit">
+              <input
+                type="number"
+                id="autoHideButtonsTimeout"
+                class="input-number"
+                min="0.5"
+                max="30"
+                step="0.5"
+                value="2.5"
+              />
+              <span>sec</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="bottom-actions">
+          <div class="bottom-actions-left">
+            <button id="resetDefaultsBottomBtn" class="btn btn-danger">
+              Reset to Default Settings
+            </button>
+          </div>
+          <button
+            type="button"
+            id="openTipModalBottomBtn"
+            class="header-coffee-link"
+            title="Support development - Leave a tip"
+          >
+            <img src="icons/176696.png" class="tip-icon-img" alt="Tip" />
+            <span>Leave a Tip</span>
+          </button>
+        </div>
+      </section>
+
+      
+      <section class="panel preview-panel">
+        
+        <div class="config-card about-hero-card">
+          <div class="hero-top-row">
+            <div class="hero-badge">
+              <span class="badge-pulse"></span>
+              About Universal Video Controller
+            </div>
+          </div>
+          <h2 class="hero-title">
+            CONTROL ANY VIDEO ON THE WEB JUST BY HOVERING OVER IT.
+          </h2>
+          <h3 class="hero-subtitle">
+            Universal Video Controller is completely free and unlimited
+          </h3>
+          <p class="hero-description">
+            Universal Video Controller started as a personal passion project
+            built out of a simple desire to make watching videos online a better
+            experience. As a solo developer, I created this extension to solve
+            the everyday frustrations I was running into myself—and I’m excited
+            to share it with anyone else looking for smoother, more intuitive
+            control over their web videos.
+          </p>
+        </div>
+
+        <div class="sticky-preview">
+          <h2 class="preview-title">Live Interactive Preview</h2>
+          <br />
+
+          
+          <div class="preview-stage" id="previewStage">
+            <video
+              id="previewVideo"
+              src="demo.webm"
+              loop
+              muted
+              playsinline
+              autoplay
+            ></video>
+
+            <div class="preview-badge">Demo Video</div>
+
+            
+            <div class="preview-controls-bar">
+              <button id="previewPlayBtn" class="preview-ctrl-btn">
+                Play / Pause
+              </button>
+              <span id="previewTime" class="preview-time">00:00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="config-card" id="autoScrollShortsSection">
+          <h2 class="card-title">Auto-Scroll</h2>
+          <p class="section-desc">
+            Automatically scroll or advance to the next video when a video ends
+            on short-form platforms.
+          </p>
+
+          <div
+            class="auto-scroll-loop-notice"
+            role="note"
+            aria-label="Auto-Scroll Loop Behavior"
+          >
+            <div class="auto-scroll-notice-body">
+              <div class="auto-scroll-notice-title">
+                <span>Loop State &amp; Auto-Scroll Rules</span>
+              </div>
+              <ul class="auto-scroll-notice-list">
+                <li>
+                  <strong>Auto-Disables Looping:</strong> Auto-Scroll
+                  automatically disables video looping on activated URLs so
+                  videos reach the end and scroll.
+                </li>
+                <li>
+                  <strong>User Loop Pause:</strong> When loop is enabled by the
+                  user in the video (via controller loop button or
+                  <kbd class="tip-kbd">L</kbd>),
+                  <strong>Auto-Scroll will be deactivated</strong> until loop is
+                  turned off.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="setting-row" style="margin-bottom: 16px">
+            <div class="setting-info">
+              <span class="setting-label">Enable Auto-Scroll</span>
+              <span class="setting-desc"
+                >Auto-advance when a short form video ends</span
+              >
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="autoScrollShorts" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <h3 class="setting-subsection-title">Preset Platforms</h3>
+          <p class="section-desc" style="margin-bottom: 12px; font-size: 12px">
+            Choose which preset platforms should auto-advance:
+          </p>
+
+          <div class="auto-scroll-presets-list" id="autoScrollPresetsList">
+            
+          </div>
+
+          <h3 class="setting-subsection-title">Custom URLs</h3>
+          <p class="section-desc" style="margin-bottom: 12px; font-size: 12px">
+            Add custom website domains or URL paths for auto-scrolling:
+          </p>
+
+          <div class="add-auto-scroll-box">
+            <input
+              type="text"
+              id="newAutoScrollPattern"
+              placeholder="facebook.com/reel/"
+            />
+            <button id="addAutoScrollBtn" class="btn btn-secondary btn-sm">
+              Add URL
+            </button>
+          </div>
+
+          <ul class="auto-scroll-custom-list" id="autoScrollCustomList">
+            
+          </ul>
+        </div>
+
+        
+        <div class="shortcuts-card" id="shortcutsSection">
+          <div class="card-intro">
+            <h2>Keyboard Shortcuts</h2>
+            <p>
+              Quick hotkeys that work on all video players and on the live
+              preview above.
+            </p>
+          </div>
+
+          
+          <div class="layout-selector-bar">
+            <div class="layout-info">
+              <label for="keyboardLayoutSelect" class="layout-label"
+                >Layout:</label
+              >
+              <select id="keyboardLayoutSelect" class="layout-select">
+                <option value="qwerty">QWERTY (Standard)</option>
+                <option value="azerty">AZERTY (French)</option>
+                <option value="qwertz">QWERTZ (German)</option>
+              </select>
+            </div>
+            <button
+              id="autoDetectBtn"
+              class="btn btn-secondary btn-sm"
+              title="Detect keyboard layout using browser API"
+            >
+              Auto-Detect Layout
+            </button>
+          </div>
+
+          
+          <div class="shortcuts-grid" id="shortcutsGrid">
+            
+          </div>
+
+          
+          <div class="actions-bar">
+            <div class="left-actions">
+              <button id="resetShortcutsBtn" class="btn btn-secondary btn-sm">
+                Reset Shortcuts
+              </button>
+              <button id="clearAllShortcutsBtn" class="btn btn-danger btn-sm">
+                Clear All
+              </button>
+            </div>
+          </div>
+        </div>
+
+        
+        <div
+          class="config-card website-customizations-card"
+          id="websiteCustomizationsSection"
+        >
+          <button
+            type="button"
+            class="customizations-collapse-toggle"
+            id="customizationsCollapseToggle"
+            aria-expanded="false"
+            aria-controls="customizationsCollapseBody"
+          >
+            <div class="customizations-toggle-left">
+              <div class="customizations-toggle-text-wrap">
+                <div class="customizations-toggle-title-row">
+                  <h2 class="card-title customizations-toggle-title">
+                    Website Customizations &amp; Exclusions
+                  </h2>
+                </div>
+                <p class="section-desc customizations-toggle-desc">
+                  Per-site rules for Speed, Volume, Muting, Looping, Play/Pause,
+                  and Excluded Sites.
+                </p>
+              </div>
+            </div>
+            <div class="customizations-toggle-right">
+              <span
+                class="customizations-toggle-status"
+                id="customizationsToggleStatus"
+                >Show</span
+              >
+              <svg
+                viewBox="0 0 24 24"
+                class="customizations-chevron-icon"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </button>
+
+          
+          <div
+            class="customizations-collapse-body"
+            id="customizationsCollapseBody"
+            aria-hidden="true"
+          >
+            <div class="customizations-subsegments-list">
+              
+              <div class="customization-subsegment">
+                <div class="subsegment-header">
+                  <h3 class="subsegment-title">Website Speed Customization</h3>
+                </div>
+                <p class="section-desc">
+                  Set custom playback speeds for specific websites.
+                </p>
+
+                <div class="add-site-speed-box">
+                  <input
+                    type="text"
+                    id="newSiteSpeedDomain"
+                    placeholder="youtube.com"
+                  />
+                  <input
+                    type="number"
+                    id="newSiteSpeedValue"
+                    min="0.1"
+                    max="16.0"
+                    step="0.05"
+                    value="1"
+                    placeholder="1.50"
+                  />
+                  <button id="addSiteSpeedBtn" class="btn btn-secondary btn-sm">
+                    Add Rule
+                  </button>
+                </div>
+
+                <ul class="site-speed-list" id="siteSpeedList">
+                  
+                </ul>
+              </div>
+
+              
+              <div class="customization-subsegment">
+                <div class="subsegment-header">
+                  <h3 class="subsegment-title">Website Volume Customization</h3>
+                </div>
+                <p class="section-desc">
+                  Set custom playback volume or mute for specific
+                  websites.
+                </p>
+
+                <div class="add-site-volume-box">
+                  <input
+                    type="text"
+                    id="newSiteVolumeDomain"
+                    placeholder="e.g. youtube.com"
+                  />
+                  <div class="site-volume-input-wrap">
+                    <input
+                      type="number"
+                      id="newSiteVolumeValue"
+                      min="0"
+                      max="600"
+                      step="5"
+                      value="100"
+                      placeholder="100"
+                    />
+                    <span class="site-volume-unit">%</span>
+                  </div>
+                  <label
+                    class="site-mute-toggle"
+                    title="Mute by default on this website"
+                  >
+                    <input type="checkbox" id="newSiteVolumeMuted" />
+                    <span class="site-mute-box">
+                      <svg
+                        class="site-mute-icon"
+                        viewBox="0 0 24 24"
+                        width="14"
+                        height="14"
+                      >
+                        <path
+                          d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span class="site-mute-text" id="newSiteVolumeMuteText"
+                        >Mute</span
+                      >
+                    </span>
+                  </label>
+                  <button
+                    id="addSiteVolumeBtn"
+                    class="btn btn-secondary btn-sm"
+                  >
+                    Add Rule
+                  </button>
+                </div>
+
+                <ul class="site-volume-list" id="siteVolumeList">
+                  
+                </ul>
+              </div>
+
+              
+              <div class="customization-subsegment">
+                <div class="subsegment-header">
+                  <h3 class="subsegment-title">Website Loop Customization</h3>
+                </div>
+                <p class="section-desc">
+                  Customize video looping behavior for specific websites.
+                </p>
+
+                <div class="add-site-loop-box">
+                  <input
+                    type="text"
+                    id="newSiteLoopDomain"
+                    placeholder="instagram.com"
+                  />
+                  <select id="newSiteLoopMode" class="input-select">
+                    <option value="loop" selected>Loop</option>
+                    <option value="unloop">Don't Loop</option>
+                  </select>
+                  <button id="addSiteLoopBtn" class="btn btn-secondary btn-sm">
+                    Add Rule
+                  </button>
+                </div>
+
+                <ul class="site-loop-list" id="siteLoopList">
+                  
+                </ul>
+              </div>
+
+              
+              <div class="customization-subsegment">
+                <div class="subsegment-header">
+                  <h3 class="subsegment-title">
+                    Website Play/Pause Customization
+                  </h3>
+                </div>
+                <p class="section-desc">
+                  Customize video play/pause behavior for specific websites when a video is detected.
+                </p>
+
+                <div class="add-site-play-box">
+                  <input
+                    type="text"
+                    id="newSitePlayDomain"
+                    placeholder="youtube.com"
+                  />
+                  <select id="newSitePlayMode" class="input-select">
+                    <option value="pause" selected>Pause</option>
+                    <option value="play">Play</option>
+                  </select>
+                  <button id="addSitePlayBtn" class="btn btn-secondary btn-sm">
+                    Add Rule
+                  </button>
+                </div>
+
+                <ul class="site-play-list" id="sitePlayList">
+                  
+                </ul>
+              </div>
+
+              
+              <div class="customization-subsegment">
+                <div class="subsegment-header">
+                  <h3 class="subsegment-title">
+                    Website Progress Bar Customization
+                  </h3>
+                </div>
+                <p class="section-desc">
+                  Floating video progress bar will start enabled automatically
+                  on these websites.
+                </p>
+
+                <div class="add-domain-box">
+                  <input
+                    type="text"
+                    id="newControlsDomainInput"
+                    placeholder="instagram.com"
+                  />
+                  <button
+                    id="addControlsDomainBtn"
+                    class="btn btn-secondary btn-sm"
+                  >
+                    Add Rule
+                  </button>
+                </div>
+
+                <ul class="domain-list" id="controlsDomainList">
+                  
+                </ul>
+              </div>
+
+              
+              <div class="customization-subsegment">
+                <div class="subsegment-header">
+                  <h3 class="subsegment-title">Excluded Websites</h3>
+                </div>
+                <p class="section-desc">
+                  The extension will be disabled on these websites.
+                </p>
+
+                <div class="add-domain-box">
+                  <input
+                    type="text"
+                    id="newDomainInput"
+                    placeholder="work.corp"
+                  />
+                  <button id="addDomainBtn" class="btn btn-secondary btn-sm">
+                    Add Rule
+                  </button>
+                </div>
+
+                <ul class="domain-list" id="domainList">
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div
+          class="config-card website-customizations-card patreons-card"
+          id="patreonsSection"
+        >
+          <button
+            type="button"
+            class="customizations-collapse-toggle patreons-collapse-toggle"
+            id="patreonsCollapseToggle"
+            aria-expanded="false"
+            aria-controls="patreonsCollapseBody"
+          >
+            <div class="customizations-toggle-left">
+              <div class="customizations-toggle-text-wrap">
+                <div class="customizations-toggle-title-row">
+                  <h2 class="card-title customizations-toggle-title">
+                    Patreons
+                  </h2>
+                </div>
+                <p class="section-desc customizations-toggle-desc">
+                  Special thanks to our generous Patreon supporters and
+                  community backers.
+                </p>
+              </div>
+            </div>
+            <div class="customizations-toggle-right">
+              <span
+                class="customizations-toggle-status"
+                id="patreonsToggleStatus"
+                >Show</span
+              >
+              <svg
+                viewBox="0 0 24 24"
+                class="customizations-chevron-icon"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+          </button>
+
+          
+          <div
+            class="customizations-collapse-body patreons-collapse-body"
+            id="patreonsCollapseBody"
+            aria-hidden="true"
+          >
+            <div
+              class="customizations-subsegments-list patreons-list"
+              id="patreonsList"
+            >
+              
+              <div class="patreons-empty-placeholder">
+                <p class="section-desc">None so far... :')</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="app-footer">
+      
+      <section class="settings-rate-footer">
+        <div class="rate-footer-card">
+          <div class="rate-stars">
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+            <svg class="star-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+              />
+            </svg>
+          </div>
+          <p class="rate-footer-text">
+            Enjoying Universal Video Controller?
+            <a
+              href="https://chromewebstore.google.com/detail/universal-video-controlle/dmepibiilnbbpgchbjdfegbibklhmgdi"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rate-highlight-link"
+            >
+              Please leave a 5-star review!
+            </a>
+            &nbsp;•&nbsp;
+            <a
+              href="https://www.patreon.com/cw/UniversalVideoControllerExtension/membership"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rate-highlight-link patreon-footer-link"
+            >
+              Become a Patreon
+            </a>
+          </p>
+        </div>
+      </section>
+    </footer>
+
+    
+    <div
+      class="tip-modal-overlay"
+      id="tipModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tipModalTitle"
+    >
+      <div class="tip-modal-container">
+        <button
+          type="button"
+          class="tip-modal-close-btn"
+          id="closeTipModalBtn"
+          title="Close Tip Jar (Esc)"
+          aria-label="Close"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+            />
+          </svg>
+        </button>
+
+        <div class="coffee-card modal-card-content">
+          <div class="coffee-header">
+            <div class="coffee-badge-row">
+              <div class="coffee-badge">
+                <img
+                  src="icons/176696.png"
+                  class="tip-icon-img badge-img"
+                  alt="Tip"
+                />
+                <span>Support Development</span>
+              </div>
+            </div>
+            <h2 class="coffee-title" id="tipModalTitle">
+              Support Universal Video Controller
+            </h2>
+            <p class="coffee-desc">
+              Enjoying Universal Video Controller? If this extension makes your
+              video watching, studying, or browsing faster and more enjoyable,
+              consider supporting ongoing development and new features!
+            </p>
+          </div>
+
+          
+          <a
+            href="https://www.patreon.com/cw/UniversalVideoControllerExtension/membership"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="patreon-featured-card"
+            id="patreonSupportCard"
+            title="Join Universal Video Controller on Patreon"
+          >
+            <div class="patreon-card-left">
+              <div class="patreon-logo-badge">
+                <img
+                  src="icons/patreon.webp"
+                  alt="Patreon"
+                  class="patreon-img-logo"
+                />
+              </div>
+              <div class="patreon-card-info">
+                <div class="patreon-eyebrow-row">
+                  <span class="patreon-eyebrow">Patreon Membership</span>
+                </div>
+                <h3 class="patreon-card-title">Become a Patreon</h3>
+              </div>
+            </div>
+            <div class="patreon-card-right">
+              <div class="patreon-action-btn">
+                <img
+                  src="icons/patreon.webp"
+                  alt=""
+                  class="patreon-btn-icon"
+                  style="
+                    width: 17px;
+                    height: 17px;
+                    object-fit: contain;
+                    border-radius: 4px;
+                  "
+                />
+                <span>Join on Patreon</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  class="patreon-arrow-svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6V3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6h-2v6H5V5z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </a>
+
+          
+          <div class="crypto-collapsible-wrapper" id="cryptoCollapsibleWrapper">
+            <button
+              type="button"
+              class="crypto-collapse-toggle"
+              id="cryptoCollapseToggle"
+              aria-expanded="false"
+              aria-controls="cryptoListContainer"
+            >
+              <div class="crypto-toggle-left">
+                <div class="crypto-toggle-text-wrap">
+                  <span class="crypto-toggle-title"
+                    >Donate with Cryptocurrency</span
+                  >
+                  <span class="crypto-toggle-subtext"
+                    >BNB, Ethereum, Solana, TRON, or Bitcoin</span
+                  >
+                </div>
+              </div>
+              <div class="crypto-toggle-right">
+                <span class="crypto-toggle-status" id="cryptoToggleStatus"
+                  >Show</span
+                >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="crypto-chevron-icon"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </button>
+
+            
+            <div
+              class="crypto-collapsible-body"
+              id="cryptoListContainer"
+              aria-hidden="true"
+            >
+              
+              <div class="crypto-list">
+                
+                <div class="crypto-row" data-coin="BNB Smart Chain (BEP-20)">
+                  <div class="crypto-left">
+                    <div class="coin-icon-wrap bnb">
+                      <svg viewBox="0 0 32 32" class="crypto-svg">
+                        <g fill="none">
+                          <circle cx="16" cy="16" r="16" fill="#F3BA2F" />
+                          <path
+                            fill="#FFF"
+                            d="M12.116 14.404L16 10.52l3.886 3.886 2.26-2.26L16 6l-6.144 6.144 2.26 2.26zM6 16l2.26-2.26L10.52 16l-2.26 2.26L6 16zm6.116 1.596L16 21.48l3.886-3.886 2.26 2.259L16 26l-6.144-6.144-.003-.003 2.263-2.257zM21.48 16l2.26-2.26L26 16l-2.26 2.26L21.48 16zm-3.188-.002h.002V16L16 18.294l-2.291-2.29-.004-.004.004-.003.401-.402.195-.195L16 13.706l2.293 2.293z"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="coin-details">
+                      <div class="coin-name-line">
+                        <span class="coin-name">BNB Smart Chain</span>
+                        <span class="network-badge bnb">BEP-20</span>
+                      </div>
+                      <span class="network-subtext">BNB / BSC Network</span>
+                    </div>
+                  </div>
+                  <div class="crypto-right">
+                    <span class="crypto-address" title="Click to copy"
+                      >0xEE41539877C21b286e2B70Ff76E5fead0147516E</span
+                    >
+                    <button
+                      class="copy-crypto-btn"
+                      data-address="0xEE41539877C21b286e2B70Ff76E5fead0147516E"
+                      data-coin="BNB Smart Chain (BEP-20)"
+                      title="Copy Address"
+                    >
+                      <svg viewBox="0 0 24 24" class="copy-svg">
+                        <path
+                          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                
+                <div class="crypto-row" data-coin="Ethereum (ERC-20)">
+                  <div class="crypto-left">
+                    <div class="coin-icon-wrap eth">
+                      <svg viewBox="0 0 32 32" class="crypto-svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <circle cx="16" cy="16" r="16" fill="#627EEA" />
+                          <g fill="#FFF" fill-rule="nonzero">
+                            <path
+                              fill-opacity=".602"
+                              d="M16.498 4v8.87l7.497 3.35z"
+                            />
+                            <path d="M16.498 4L9 16.22l7.498-3.35z" />
+                            <path
+                              fill-opacity=".602"
+                              d="M16.498 21.968v6.027L24 17.616z"
+                            />
+                            <path d="M16.498 27.995v-6.028L9 17.616z" />
+                            <path
+                              fill-opacity=".2"
+                              d="M16.498 20.573l7.497-4.353-7.497-3.348z"
+                            />
+                            <path
+                              fill-opacity=".602"
+                              d="M9 16.22l7.498 4.353v-7.701z"
+                            />
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="coin-details">
+                      <div class="coin-name-line">
+                        <span class="coin-name">Ethereum</span>
+                        <span class="network-badge eth">ERC-20</span>
+                      </div>
+                      <span class="network-subtext">Ethereum Mainnet</span>
+                    </div>
+                  </div>
+                  <div class="crypto-right">
+                    <span class="crypto-address" title="Click to copy"
+                      >0xEE41539877C21b286e2B70Ff76E5fead0147516E</span
+                    >
+                    <button
+                      class="copy-crypto-btn"
+                      data-address="0xEE41539877C21b286e2B70Ff76E5fead0147516E"
+                      data-coin="Ethereum (ERC-20)"
+                      title="Copy Address"
+                    >
+                      <svg viewBox="0 0 24 24" class="copy-svg">
+                        <path
+                          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                
+                <div class="crypto-row" data-coin="Solana">
+                  <div class="crypto-left">
+                    <div class="coin-icon-wrap sol">
+                      <svg viewBox="0 0 32 32" class="crypto-svg">
+                        <g fill="none">
+                          <circle fill="#14F195" cx="16" cy="16" r="16" />
+                          <path
+                            d="M9.925 19.687a.59.59 0 01.415-.17h14.366a.29.29 0 01.207.497l-2.838 2.815a.59.59 0 01-.415.171H7.294a.291.291 0 01-.207-.498l2.838-2.815zm0-10.517A.59.59 0 0110.34 9h14.366c.261 0 .392.314.207.498l-2.838 2.815a.59.59 0 01-.415.17H7.294a.291.291 0 01-.207-.497L9.925 9.17zm12.15 5.225a.59.59 0 00-.415-.17H7.294a.291.291 0 00-.207.498l2.838 2.815c.11.109.26.17.415.17h14.366a.291.291 0 00.207-.498l-2.838-2.815z"
+                            fill="#0b0e14"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="coin-details">
+                      <div class="coin-name-line">
+                        <span class="coin-name">Solana</span>
+                        <span class="network-badge sol">SOL</span>
+                      </div>
+                      <span class="network-subtext">Solana Network</span>
+                    </div>
+                  </div>
+                  <div class="crypto-right">
+                    <span class="crypto-address" title="Click to copy"
+                      >BssHHP99CXrXaGYCXSkixCppBX6kPFqsxB3G7aBuJpUQ</span
+                    >
+                    <button
+                      class="copy-crypto-btn"
+                      data-address="BssHHP99CXrXaGYCXSkixCppBX6kPFqsxB3G7aBuJpUQ"
+                      data-coin="Solana"
+                      title="Copy Address"
+                    >
+                      <svg viewBox="0 0 24 24" class="copy-svg">
+                        <path
+                          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                
+                <div class="crypto-row" data-coin="TRON (TRC-20)">
+                  <div class="crypto-left">
+                    <div class="coin-icon-wrap trx">
+                      <svg viewBox="0 0 32 32" class="crypto-svg">
+                        <g fill="none">
+                          <circle fill="#EF0027" cx="16" cy="16" r="16" />
+                          <path
+                            d="M21.932 9.913L7.5 7.257l7.595 19.112 10.583-12.894-3.746-3.562zm-.232 1.17l2.208 2.099-6.038 1.093 3.83-3.192zm-5.142 2.973l-6.364-5.278 10.402 1.914-4.038 3.364zm-.453.934l-1.038 8.58L9.472 9.487l6.633 5.502zm.96.455l6.687-1.21-7.67 9.343.983-8.133z"
+                            fill="#FFF"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="coin-details">
+                      <div class="coin-name-line">
+                        <span class="coin-name">TRON</span>
+                        <span class="network-badge trx">TRC-20</span>
+                      </div>
+                      <span class="network-subtext">TRON Network</span>
+                    </div>
+                  </div>
+                  <div class="crypto-right">
+                    <span class="crypto-address" title="Click to copy"
+                      >TUnm7zUa2PpwEaBG2gQ1UnFTQUqJVUoFeG</span
+                    >
+                    <button
+                      class="copy-crypto-btn"
+                      data-address="TUnm7zUa2PpwEaBG2gQ1UnFTQUqJVUoFeG"
+                      data-coin="TRON (TRC-20)"
+                      title="Copy Address"
+                    >
+                      <svg viewBox="0 0 24 24" class="copy-svg">
+                        <path
+                          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+
+                
+                <div class="crypto-row" data-coin="Bitcoin (BTC)">
+                  <div class="crypto-left">
+                    <div class="coin-icon-wrap btc">
+                      <svg viewBox="0 0 32 32" class="crypto-svg">
+                        <g fill="none" fill-rule="evenodd">
+                          <circle cx="16" cy="16" r="16" fill="#F7931A" />
+                          <path
+                            fill="#FFF"
+                            fill-rule="nonzero"
+                            d="M23.189 14.02c.314-2.096-1.283-3.223-3.465-3.975l.708-2.84-1.728-.43-.69 2.765c-.454-.114-.92-.22-1.385-.326l.695-2.783L15.596 6l-.708 2.839c-.376-.086-.746-.17-1.104-.26l.002-.009-2.384-.595-.46 1.846s1.283.294 1.256.312c.7.175.826.638.805 1.006l-.806 3.235c.048.012.11.03.18.057l-.183-.045-1.13 4.532c-.086.212-.303.531-.793.41.018.025-1.256-.313-1.256-.313l-.858 1.978 2.25.561c.418.105.828.215 1.231.318l-.715 2.872 1.727.43.708-2.84c.472.127.93.245 1.378.357l-.706 2.828 1.728.43.715-2.866c2.948.558 5.164.333 6.097-2.333.752-2.146-.037-3.385-1.588-4.192 1.13-.26 1.98-1.003 2.207-2.538zm-3.95 5.538c-.533 2.147-4.148.986-5.32.695l.95-3.805c1.172.293 4.929.872 4.37 3.11zm.535-5.569c-.487 1.953-3.495.96-4.47.717l.86-3.45c.975.243 4.118.696 3.61 2.733z"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="coin-details">
+                      <div class="coin-name-line">
+                        <span class="coin-name">Bitcoin</span>
+                        <span class="network-badge btc">BTC</span>
+                      </div>
+                      <span class="network-subtext">Bitcoin Network</span>
+                    </div>
+                  </div>
+                  <div class="crypto-right">
+                    <span class="crypto-address" title="Click to copy"
+                      >bc1qxcc4fprwhpmwv7uaxqdyrky3g6nravhslgvnrk</span
+                    >
+                    <button
+                      class="copy-crypto-btn"
+                      data-address="bc1qxcc4fprwhpmwv7uaxqdyrky3g6nravhslgvnrk"
+                      data-coin="Bitcoin (BTC)"
+                      title="Copy Address"
+                    >
+                      <svg viewBox="0 0 24 24" class="copy-svg">
+                        <path
+                          d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <span>Copy</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="recording-modal" id="recordingModal">
+      <div class="modal-card">
+        <h3 id="modalTitle">Press any key</h3>
+        <p id="modalDesc">
+          Press any key on your keyboard to assign, Backspace or Delete to
+          Clear, or Esc to cancel. Please do not use preset shortcuts
+        </p>
+        <div class="key-preview" id="keyPreview">Listening...</div>
+        <div class="key-preview-hint" id="keyPreviewHint"></div>
+        <div class="modal-actions">
+          <button
+            id="clearModalKeyBtn"
+            class="btn btn-secondary btn-sm modal-none-btn"
+            type="button"
+          >
+            Clear
+          </button>
+          <button
+            id="cancelModalBtn"
+            class="btn btn-secondary btn-sm"
+            type="button"
+          >
+            Cancel (Esc)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="toast" id="toast">Settings saved successfully!</div>
+
+    <script src="settings.js"></script>
+    <script src="content.js"></script>
+  </body>
+</html>

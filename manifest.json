@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Video Controller",
+  "short_name": "UVC",
+  "version": "1.0.1.2",
+  "description": "Universal controller & hotkeys for videos: speed, volume, loop, skip, auto-scroll, Pop Out & customizable themes.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "options_ui": {
+    "page": "settings.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16_gray.png",
+      "32": "icons/icon32_gray.png",
+      "48": "icons/icon48_gray.png",
+      "64": "icons/icon64_gray.png",
+      "128": "icons/icon128_gray.png"
+    },
+    "default_title": "Universal Video Controller"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "world": "MAIN",
+      "js": [
+        "background-play.js"
+      ]
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "run_at": "document_start",
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "64": "icons/icon64.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*",
+        "demo.webm",
+        "demo-light.webm",
+        "background-play.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

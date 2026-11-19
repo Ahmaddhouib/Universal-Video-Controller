@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Universal Video Controller</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="theme-init.js"></script>
+</head>
+<body>
+  <div class="popup-container">
+    
+    <header class="popup-header">
+      <div class="logo-wrap">
+        <img src="icons/icon.svg" alt="Universal Logo" class="logo-img">
+        <div class="title-group">
+          <h1>Universal Video Controller</h1>
+          <div class="version-row">
+            <span class="version-tag" id="versionTag">v1.0.1.2</span>
+            <button type="button" class="check-update-btn" id="checkUpdateBtn" title="Check for updates" aria-label="Check for updates">
+              <svg class="check-update-icon" viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button class="popup-theme-btn" id="themeToggleBtn" title="Toggle Light / Dark Theme" aria-label="Toggle Theme">
+        <svg class="theme-icon sun-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 00-1.41-1.41l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" fill="currentColor"/></svg>
+        <svg class="theme-icon moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/></svg>
+      </button>
+    </header>
+
+    
+    <div class="rate-prompt">
+      <a href="https://chromewebstore.google.com/detail/universal-video-controlle/dmepibiilnbbpgchbjdfegbibklhmgdi" target="_blank" rel="noopener noreferrer" class="rate-link" id="rateUsLink" title="Rate us 5 stars on the Chrome Web Store!">
+        <div class="rate-stars">
+          <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <span class="rate-text">Enjoying this? Leave a 5-star review!</span>
+      </a>
+    </div>
+
+    
+    <section class="card site-card">
+      <div class="site-info">
+        <div class="domain-row">
+          
+          &nbsp;
+          <span class="status-dot" id="statusDot"></span>
+          <div class="domain-text-col">
+            <span class="domain-name" id="currentDomain">Checking page...</span>
+            <span class="domain-video-sub" id="domainVideoSub" style="display: none;">No video detected</span>
+          </div>
+        </div>
+      </div>
+      <button class="site-toggle-btn no-transition" id="siteToggleBtn" title="Toggle extension on this page">
+        <span class="toggle-track">
+          <span class="toggle-thumb"></span>
+        </span>
+        <span class="toggle-text" id="siteToggleText">Active</span>
+      </button>
+    </section>
+
+    
+    <section class="card custom-card" id="siteCustomCard">
+      <div class="custom-header">
+        <div class="custom-title-row">
+          <svg class="custom-title-icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="currentColor"/></svg>
+          <span class="custom-title">Site Customizations</span>
+        </div>
+        <button id="clearAllSiteRulesBtn" class="clear-site-rules-btn" title="Clear all custom rules for this website" style="display: none;">
+          Clear Rules
+        </button>
+      </div>
+
+      
+      <div class="site-internal-notice" id="siteInternalNotice" style="display: none;">
+        <span>Open any website (e.g. youtube.com) to customize rules for that site.</span>
+      </div>
+
+      
+      <div class="custom-row exclude-row">
+        <div class="custom-row-info">
+          <span class="custom-row-label">Website Exclusion</span>
+        </div>
+        <div class="site-status-badge is-not-excluded" id="siteStatusBadge" title="Controlled via the switch above">
+          <span class="status-badge-dot"></span>
+          <span id="siteStatusBadgeText">Not Excluded</span>
+        </div>
+      </div>
+
+      
+      <div class="custom-row">
+        <div class="custom-row-info">
+          <span class="custom-row-label">Default Speed</span>
+          <span class="custom-row-sub" id="siteSpeedSub">Default: 1.00x</span>
+        </div>
+        <div class="rule-box">
+          <input
+            type="number"
+            id="siteSpeedInput"
+            class="rule-number-input"
+            min="0.1"
+            max="16.0"
+            step="0.05"
+            value="1.00"
+            placeholder="1.00"
+          />
+        </div>
+      </div>
+
+      
+      <div class="custom-row">
+        <div class="custom-row-info">
+          <span class="custom-row-label">Default Volume</span>
+          <span class="custom-row-sub" id="siteVolumeSub">Default: 100%</span>
+        </div>
+        <div class="rule-box">
+          <div class="rule-input-wrap">
+            <input
+              type="number"
+              id="siteVolumeInput"
+              class="rule-number-input volume-input"
+              min="0"
+              max="600"
+              step="5"
+              value="100"
+              placeholder="100"
+            />
+            <span class="rule-unit">%</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="custom-row">
+        <div class="custom-row-info">
+          <span class="custom-row-label">Mute Rule</span>
+          <span class="custom-row-sub">Sound on load</span>
+        </div>
+        <select id="siteMuteSelect" class="custom-select">
+          <option value="none">Default</option>
+          <option value="unmute">Always Unmute</option>
+          <option value="mute">Always Mute</option>
+        </select>
+      </div>
+
+      
+      <div class="custom-row">
+        <div class="custom-row-info">
+          <span class="custom-row-label">Loop Rule</span>
+          <span class="custom-row-sub">Repeat video</span>
+        </div>
+        <select id="siteLoopSelect" class="custom-select">
+          <option value="none">Default</option>
+          <option value="loop">Loop</option>
+          <option value="unloop">Don't Loop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        </select>
+      </div>
+
+      
+      <div class="custom-row">
+        <div class="custom-row-info">
+          <span class="custom-row-label">Play/Pause</span>
+          <span class="custom-row-sub">State on load</span>
+        </div>
+        <select id="sitePlaySelect" class="custom-select">
+          <option value="none">Default</option>
+          <option value="pause">Always Pause</option>
+          <option value="play">Always Play</option>
+        </select>
+      </div>
+    </section>
+
+    
+    <nav class="action-nav">
+      <button class="nav-item" id="openSettingsBtn" title="Open Settings">
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        <span>Settings</span>
+      </button>
+      <button class="nav-item nav-item-tip" id="openTipBtn" title="Leave a tip to support development">
+        <img src="icons/176696.png" class="nav-tip-icon" alt="Tip" />
+        <span>Leave a Tip</span>
+      </button>
+    </nav>
+
+    
+    <div id="boostConfirmModal" class="popup-modal-overlay" style="display: none;">
+      <div class="popup-modal-card">
+        <div class="popup-modal-header">
+          <svg class="popup-modal-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"/></svg>
+          <span class="popup-modal-title">Enable Volume Boost?</span>
+        </div>
+        <div class="popup-modal-body" id="boostConfirmModalText">
+          Setting a volume above 100% requires Volume Boost. Would you like to enable Volume Boost now?
+        </div>
+        <div class="popup-modal-actions">
+          <button type="button" id="boostCancelBtn" class="modal-btn modal-cancel-btn">Cancel</button>
+          <button type="button" id="boostConfirmBtn" class="modal-btn modal-confirm-btn">Enable Boost</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="popupToast" class="popup-toast"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
