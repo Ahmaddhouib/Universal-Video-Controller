@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Universal Video Controller",
   "short_name": "UVC",
-  "version": "1.0.1.2",
+  "version": "1.0.1.3",
   "description": "Universal controller & hotkeys for videos: speed, volume, loop, skip, auto-scroll, Pop Out & customizable themes.",
   "permissions": [
     "storage",

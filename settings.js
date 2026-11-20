@@ -408,6 +408,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             controlsFadeInDelayInput.disabled = isClick;
         }
     }
+    function updateAutoMinimizeState() {
+        const isEnabled = autoMinimizeSwitch ? autoMinimizeSwitch.checked : true;
+        if (autoMinimizeRow) {
+            autoMinimizeRow.style.display = "";
+            autoMinimizeRow.classList.toggle("is-disabled", !isEnabled);
+        }
+        if (autoMinimizeTimeoutInput) {
+            autoMinimizeTimeoutInput.disabled = !isEnabled;
+        }
+    }
     function updateAutoHideButtonsState() {
         const isEnabled = autoHideButtonsSwitch ? autoHideButtonsSwitch.checked : true;
         if (autoHideButtonsRow) {
@@ -730,8 +740,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (shortSkipInput) shortSkipInput.value = cfg.shortSkipDuration !== void 0 ? cfg.shortSkipDuration : 5;
         if (longSkipInput) longSkipInput.value = cfg.longSkipDuration !== void 0 ? cfg.longSkipDuration : 10;
         if (autoMinimizeSwitch) autoMinimizeSwitch.checked = cfg.autoMinimize !== false;
-        if (autoMinimizeRow && autoMinimizeSwitch) autoMinimizeRow.style.display = autoMinimizeSwitch.checked ? "flex" : "none";
         if (autoMinimizeTimeoutInput) autoMinimizeTimeoutInput.value = (cfg.autoMinimizeTimeout !== void 0 ? cfg.autoMinimizeTimeout : 2500) / 1e3;
+        updateAutoMinimizeState();
         if (autoHideButtonsSwitch) autoHideButtonsSwitch.checked = cfg.autoHideButtons !== false;
         if (autoHideButtonsTimeoutInput) autoHideButtonsTimeoutInput.value = (cfg.autoHideButtonsTimeout !== void 0 ? cfg.autoHideButtonsTimeout : 2500) / 1e3;
         updateAutoHideButtonsState();
@@ -1074,7 +1084,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     if (autoMinimizeSwitch) {
         autoMinimizeSwitch.addEventListener("change", () => {
-            if (autoMinimizeRow) autoMinimizeRow.style.display = autoMinimizeSwitch.checked ? "flex" : "none";
+            updateAutoMinimizeState();
             triggerAutoSave(autoMinimizeSwitch.checked ? "Auto-Minimize Video Controls enabled" : "Auto-Minimize Video Controls disabled");
         });
     }
